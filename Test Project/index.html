@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Project</title>
+</head>
+<body>
+    <p id="para">Loading...</p>
+    <script>
+        const para = document.querySelector('#para');
+
+        async function fetchData() {
+            try {
+                // Fetch data from the server
+                const response = await fetch("https://api-test-tawny.vercel.app/api");
+                
+                // Handle HTTP errors
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                // Parse the JSON data
+                const data = await response.json();
+
+                // Display the data or an appropriate message
+                para.innerText = JSON.stringify(data, null, 2); // Pretty-print JSON data
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                para.innerText = "An error occurred while fetching data.";
+            }
+        }
+
+        // Call the fetchData function
+        fetchData();
+    </script>
+</body>
+</html>

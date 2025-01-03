@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Inspired Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1></h1>
+    <h3 class="typing-text"></h3>
+    <form action="">
+        <input type="text" name="username" id="name" placeholder="Enter your name">
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        //Select elements
+        let nameInput = document.getElementById('name');
+        let counter = document.querySelector('h1');
+
+        // Update counter with input length
+        nameInput.addEventListener('input', () => {
+            counter.innerText = `Character count: ${nameInput.value.length}`;
+        });
+
+        // // Simulated typing animation for "Hello World"
+        // let headingContent = 'Hello World'; // String with space
+        // let headContentCounter = 0;
+        // console.log(`'${headingContent[5]}'`)
+        // let fname = "Ahmad"
+        // let lname = "Mahboob"
+        // console.log(`${fname}${headingContent[5]}${lname}`)
+
+        // function animateText() {
+        //     counter.innerText = ""; // Clear the text at the start
+        //     let typingInterval = setInterval(() => {
+        //         if(headingContent[headContentCounter] == ' '){
+        //             counter.innerText += ` `;
+        //             headContentCounter++;
+        //         }else{
+        //         if (headContentCounter < headingContent.length) {
+        //             // Append the next character, including spaces
+        //             counter.innerText += `${headingContent[headContentCounter]}`;
+        //             headContentCounter++;
+        //         } else {
+        //             clearInterval(typingInterval); // Stop typing animation
+        //             headContentCounter = 0; // Reset counter
+        //             setTimeout(animateText, 1000); // Restart after a delay
+        //         }}
+        //     }, 500); // Typing speed
+        // }
+
+        // // Start animation
+        // animateText();
+
+        const textElement = document.querySelector('.typing-text');
+    const textToType = "Hello, this is a typing animation!";
+    const typingSpeed = 50
+    let index = 0;
+    let typingAnimation
+    function typeText() {
+      if (index < textToType.length) {
+        textElement.textContent += textToType.charAt(index);
+        index++;
+        let typingAnimation = setTimeout(typeText, typingSpeed); // Adjust typing speed (milliseconds)
+      }else{
+        clearInterval(typingAnimation)
+        textElement.innerText = ""
+        index = 0
+        setTimeout(typeText, typingSpeed)
+
+      }
+    }
+
+    typeText()
+    </script>
+</body>
+</html>

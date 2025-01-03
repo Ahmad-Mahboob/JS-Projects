@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculate</title>
+</head>
+<body>
+    <input type="number" name="" id="input-number" placeholder="Enter Your Number">
+    <input type="button" value="Submit" placeholder="Calculate" onclick="calculatefactorial()">
+    <h1 id="show-factorial"></h1>
+    <script>
+        let numberInput = document.querySelector("#input-number");
+        let calculatedfactorial = 1;
+        let toMultiply
+        function calculatefactorial(){
+            for(let i = 1; i < numberInput.value; i++){
+                num = numberInput.value
+                toMultiply = num - i
+                calculatedfactorial = calculatedfactorial * toMultiply
+            }
+            document.querySelector("#show-factorial").innerText = `The factorial of given number is ${calculatedfactorial * numberInput.value}`
+            calculatedfactorial = 1
+            numberInput.value = ""
+        }
+
+    </script>
+</body>
+</html>

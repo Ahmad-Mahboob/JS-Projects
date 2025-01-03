@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Project</title>
+</head>
+<body>
+
+    <h1>Enter Your Credentials to Check UserID</h1>
+    <h2 id="show-result"></h2>
+    <input type="email" name="Email" id="input-mail" placeholder="Enter Your Email">
+    <input type="password" name="pass" id="input-pass" placeholder="Enter Your Password">
+    <p>
+        <input type="checkbox" onclick="showPassword()"> Show Password
+    </p>
+    <input type="submit" value="Submit" onclick="checkUserID()">
+    
+    <div id="food-section" style="display:none;">
+        <h3>Add Your Favorite Foods</h3>
+        <input type="text" id="input-food" placeholder="Enter Favorite Food">
+        <input type="submit" value="Add Food" onclick="addFavoriteFood()">
+        <h4 id="food-feedback"></h4>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

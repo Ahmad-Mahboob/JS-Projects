@@ -1,0 +1,15 @@
+let questionHeading = document.querySelector(".question-no")
+let question = document.querySelector(".question")
+let optiona = document.querySelector(".optiona")
+let optionb = document.querySelector(".optionb")
+let optionc = document.querySelector(".optionc")
+let optiond = document.querySelector(".optiond")
+let optionaLabel = document.querySelector('.optiona-label')
+let optionbLabel = document.querySelector('.optionb-label')
+let optioncLabel = document.querySelector('.optionc-label')
+let optiondLabel = document.querySelector('.optiond-label')
+let submitButton = document.querySelector('.submit')
+let options = document.querySelectorAll(".options")
+const actualAnswers = ['Islamabad', 'Lahore', 'Peshawar', 'Karachi', 'Quetta']
+const selectedAnswers = []
+let quesNo = 0
